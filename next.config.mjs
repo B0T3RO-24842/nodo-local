@@ -8,7 +8,8 @@ const nextConfig = {
         source: "/(.*)",
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "DENY" },
+          // Only this site and the portfolio may embed the demo; everyone else stays blocked.
+          { key: "Content-Security-Policy", value: "frame-ancestors 'self' https://b0t3ro-24842.github.io" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           {
             key: "Permissions-Policy",

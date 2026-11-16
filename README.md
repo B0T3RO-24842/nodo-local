@@ -146,6 +146,9 @@ Consecuencias:
 - Al reiniciar el servidor, el salón vuelve al estado inicial (útil para
   limpiar datos de prueba: mesas M04 ocupada, M06 reservada, M07 por limpiar).
 - Las sesiones y tarjetas creadas desaparecen con el proceso.
+- En la demo en línea (Vercel) el proceso se reinicia solo y puede haber varias
+  instancias: los datos se borran cada cierto tiempo y una comanda recién creada
+  puede no aparecer al recargar. Es esperado, no un error.
 
 Para producción, la capa ya está aislada: sustituye las funciones de
 `lib/server/store.ts` por Prisma/Drizzle + Redis sin tocar las rutas ni los
